@@ -14,9 +14,9 @@ public class SpringJDBCApp {
 		ApplicationContext context = new ClassPathXmlApplicationContext("configJDBC.xml");
 		Student student = new Student();
 		student.setId("21825");
-		student.setName("Spring-3");
+		student.setName("Spring Update");
 		
 		StudentDaoImpl studentImpl = context.getBean("daoImplementation", StudentDaoImpl.class);
-		studentImpl.insertStudent(student);
+		studentImpl.updateStudent(student);
 		}
 	}
