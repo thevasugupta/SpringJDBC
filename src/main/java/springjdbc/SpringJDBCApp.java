@@ -13,8 +13,8 @@ public class SpringJDBCApp {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("configJDBC.xml");
 		Student student = new Student();
-		student.setId("2108");
-		student.setName("Spring");
+		student.setId("21825");
+		student.setName("Spring-3");
 		
 		StudentDaoImpl studentImpl = context.getBean("daoImplementation", StudentDaoImpl.class);
 		studentImpl.insertStudent(student);

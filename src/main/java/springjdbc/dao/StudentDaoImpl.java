@@ -39,6 +39,7 @@ public class StudentDaoImpl implements StudentDao {
         String query = "INSERT INTO STUDENT (id,name) VALUES (?,?)";
         
         template.update(query,student.getId(),student.getName());
+        System.out.println("Insertion Successful : ("+student.getId()+","+student.getName()+")");
 	}
 	
 }
