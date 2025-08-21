@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -48,6 +49,25 @@ public class StudentDaoImpl implements StudentDao {
 		template.update(query, student.getName(),student.getId());
 		System.out.println("Updation Success!");
 		
+	}
+
+
+
+	@Override
+	public void getStudent(Student student) {
+		String query = "SELECT * FROM STUDENT";
+		
+		 List<Student> students = template.query(query, (rs, rowNum) -> {
+		        Student s = new Student();
+		        s.setId(rs.getString("id"));
+		        s.setName(rs.getString("name"));
+		        return s;
+		    });
+		
+		System.out.println("Displaying Records:");
+		for (Student s : students) {
+	        System.out.println("ID: " + s.getId() + ", Name: " + s.getName());
+	    }
 	}
 	
 }
