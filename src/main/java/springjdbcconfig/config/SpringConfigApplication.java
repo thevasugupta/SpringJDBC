@@ -11,8 +11,10 @@ public class SpringConfigApplication {
 		ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
 		
 		Student student = new Student();
-		
+		student.setId("250825");
+		student.setName("Spring via .class");
+
 		StudentDaoImpl studentImpl = context.getBean("daoImplementation", StudentDaoImpl.class);
-		studentImpl.getStudent(student);
+		studentImpl.updateStudent(student);
 	}
 }
