@@ -15,6 +15,6 @@ public class SpringConfigApplication {
 		student.setName("Spring via .class");
 
 		StudentDaoImpl studentImpl = context.getBean("daoImplementation", StudentDaoImpl.class);
-		studentImpl.updateStudent(student);
+		studentImpl.insertStudent(student);
 	}
 }
